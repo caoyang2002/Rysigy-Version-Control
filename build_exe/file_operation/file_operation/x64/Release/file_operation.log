@@ -1,0 +1,10 @@
+﻿  main.cpp
+C:\Users\Administrator\Desktop\Rysigy\new\build_exe\file_operation\file_operation\main.cpp(25,84): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\Administrator\Desktop\Rysigy\new\build_exe\file_operation\file_operation\main.cpp(29,74): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+    正在创建库 C:\Users\Administrator\Desktop\Rysigy\new\build_exe\file_operation\x64\Release\file_operation.lib 和对象 C:\Users\Administrator\Desktop\Rysigy\new\build_exe\file_operation\x64\Release\file_operation.exp
+  正在生成代码
+  108 of 209 functions (51.7%) were compiled, the rest were copied from previous compilation.
+    84 functions were new in current compilation
+    16 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  file_operation.vcxproj -> C:\Users\Administrator\Desktop\Rysigy\new\build_exe\file_operation\x64\Release\file_operation.exe
