@@ -1,8 +1,12 @@
 # Rysigy
 <p style="color:red">There is no English version at the moment</p>
-![doc/image/file_vc.jpg]
-![doc/image/folder_vc.jpg]
-![doc/image/bg_vc.jpg]
+- 文件版本控制
+![file](https://mielgo-markdown.oss-cn-chengdu.aliyuncs.com/Rysigy_file_vc.png)
+- 文件夹版本控制
+![folder](https://mielgo-markdown.oss-cn-chengdu.aliyuncs.com/Rysigy_folder_vc.png)
+- 存储库管理
+![bg](https://mielgo-markdown.oss-cn-chengdu.aliyuncs.com/Rysigy_bg_vc.png)
+
 # 仅使用
 下载.zip文件
 1. 使用`安装此软件`生成一个reg配置文件
@@ -16,4 +20,5 @@
 git clone https://github.com/caoyang2002/Rysigy.git
 ```
 待完善...
+
 
