@@ -1,0 +1,16 @@
+﻿  pch.cpp
+  dllmain.cpp
+  get_info.cpp
+  SHA256.cpp
+C:\Users\Administrator\Desktop\Rysigy\new\build_dll\get_info\get_info\SHA256.cpp(130,15): warning C4244: “=”: 从“uint64_t”转换到“uint8_t”，可能丢失数据
+C:\Users\Administrator\Desktop\Rysigy\new\build_dll\get_info\get_info\SHA256.cpp(131,24): warning C4244: “=”: 从“uint64_t”转换到“uint8_t”，可能丢失数据
+C:\Users\Administrator\Desktop\Rysigy\new\build_dll\get_info\get_info\SHA256.cpp(132,24): warning C4244: “=”: 从“uint64_t”转换到“uint8_t”，可能丢失数据
+C:\Users\Administrator\Desktop\Rysigy\new\build_dll\get_info\get_info\SHA256.cpp(133,24): warning C4244: “=”: 从“uint64_t”转换到“uint8_t”，可能丢失数据
+C:\Users\Administrator\Desktop\Rysigy\new\build_dll\get_info\get_info\SHA256.cpp(134,24): warning C4244: “=”: 从“uint64_t”转换到“uint8_t”，可能丢失数据
+C:\Users\Administrator\Desktop\Rysigy\new\build_dll\get_info\get_info\SHA256.cpp(135,24): warning C4244: “=”: 从“uint64_t”转换到“uint8_t”，可能丢失数据
+C:\Users\Administrator\Desktop\Rysigy\new\build_dll\get_info\get_info\SHA256.cpp(136,24): warning C4244: “=”: 从“uint64_t”转换到“uint8_t”，可能丢失数据
+  正在生成代码...
+SHA256.obj : error LNK2019: 无法解析的外部符号 __imp__invalid_parameter，函数 "void * __cdecl std::_Allocate_manually_vector_aligned<struct std::_Default_allocate_traits>(unsigned __int64)" (??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPEAX_K@Z) 中引用了该符号
+SHA256.obj : error LNK2019: 无法解析的外部符号 __imp__calloc_dbg，函数 "char * __cdecl std::_Maklocstr<char>(char const *,char *,struct _Cvtvec const &)" (??$_Maklocstr@D@std@@YAPEADPEBDPEADAEBU_Cvtvec@@@Z) 中引用了该符号
+SHA256.obj : error LNK2019: 无法解析的外部符号 __imp__CrtDbgReport，函数 "void * __cdecl std::_Allocate_manually_vector_aligned<struct std::_Default_allocate_traits>(unsigned __int64)" (??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPEAX_K@Z) 中引用了该符号
+C:\Users\Administrator\Desktop\Rysigy\new\build_dll\get_info\x64\Debug\get_info.dll : fatal error LNK1120: 3 个无法解析的外部命令
