@@ -1,72 +1,62 @@
-trait Overview{
-    fn overview(&self) -> String {
-        String::from("Course")
-    }
+use std::arch::aarch64::vuqadds_s32;
+
+fn closure_fn<F>(func: F) // 不可变推荐使用
+    where
+        F: Fn()
+{
+    func();
+    func();
 }
 
-trait Another {
-    fn hell(&self) {
-        println!("welcome to hell");
-    }
+fn closure_fn_mut<F>(mut func: F)
+    where
+        F: FnMut()
+{
+    func();
+    func();
 }
 
-// impl 和泛型写法的两种区别
-struct Course {
-    headline: String,
-    author:String,
-}
-
-impl Overview for Course {}
-
-struct AnotherCourse{
-    headline: String,
-    author: String,
-}
-
-// impl 的写法
-impl Overview for AnotherCourse {}
-fn call_overview(item:&impl Overview){
-    println!("Overview {}",item.overview());
-}
-
-// 写法
-fn call_overview_generic<T:Overview>(item:&T){
-    println!("Overview {}",item.overview());
-}
-
-fn call_overview_T(item1:&impl Overview,item2:&impl Overview){
-    println!("Overview {}",item1.overview());
-    println!("Overview {}",item2.overview());
-}
-
-// 泛型
-fn call_overview_TT<T:Overview>(item1:&T,item2:&T){
-    println!("Overview {}",item1.overview());
-    println!("Overview {}",item2.overview());
+fn closure_fn_once<F>(func: F)
+    where
+        F: FnOnce()
+{
+    func();
 }
 fn main(){
-    let c0 = Course{headline:"headline".to_owned(),author:"author".to_owned(),};
-    let c1 = Course{headline:"headline".to_owned(),author:"author".to_owned(),};
-    let c2 = AnotherCourse{headline:"headline_2".to_owned(),author:"author_2".to_owned(),};
-    call_overview(&c1);
-    // Overview Course
-    call_overview_generic(&c1);
-    // Overview Course
+    // 不可变引用只能传一种
+    let s1 = String::from("1111");
+    closure_fn(||println!("{}",s1) );
 
-    call_overview(&c1);
-    // Overview Course
-    call_overview_generic(&c2); // the trait `Overview` is not implemented for `AnotherCourse`
-    // Overview Course
-    call_overview_T(&c1,&c2);
-    // Overview Course
-    // Overview Course
+    // 可变引用
+    let s1 = String::from("1111");
+    closure_fn_mut(||println!("{}",s1) );
 
-    //
-    println!("----------------------");
-    // call_overview_TT(&c1,&c2); // &c2: the trait `Overview` is not implemented for `AnotherCourse`
-    call_overview_TT(&c1,&c0);
-    call_overview_T(&c1,&c0);
-    // Overview Course
-    // Overview Course
+    let mut s2 = String::from("2222");
+    closure_fn_mut(|| {
+        s2.push_str("str");
+        println!("s2 is {}",s2)
+    });
+    println!("s2 is {}",s2);
+    // s2 is 2222strstr
 
+
+
+    println!("所有权转移");
+    // FnOnce 所有权转移
+    let s1 = String::from("1111");
+    closure_fn_once(||println!("{}",s1) );
+    // 1111
+
+    let mut s2 = String::from("2222");
+    closure_fn_once(|| {
+        s2.push_str("str");
+        println!("s2 is {}",s2)
+    });
+    println!("s2 is {}",s2);
+    // s2 is 2222str
+    // s2 is 2222str
+
+    let s3 = "string".to_owned();
+    closure_fn_once(move || println!("s3 is {s3}"));
+    // println!("{s3}"); //  所有权已经转移了：value borrowed here after move
 }
